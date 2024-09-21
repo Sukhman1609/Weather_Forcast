@@ -68,3 +68,77 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Weather Forecast App
+This is a simple React application that allows users to search for a city and view the current weather as well as a 5-day forecast. It integrates with the OpenWeatherMap API to fetch weather data.
+
+### Features
+Search weather for any city in the world.
+Displays the current temperature, weather condition, and an icon for the current weather.
+Allows switching between Celsius and Fahrenheit units.
+Displays a 5-day weather forecast.
+
+### Setup Instructions
+### Prerequisites
+Node.js installed on your system (version 14 or higher).
+A free API key from OpenWeatherMap.
+
+### Installation Steps
+## Clone the repository
+Open your terminal and run the following command to clone the project:
+
+git clone https://github.com/yourusername/weather-forecast-app.git
+cd weather-forecast-app
+
+## Install dependencies
+Once inside the project directory, install the required dependencies using npm or yarn:
+npm install
+
+## Set up your API key
+You will need an API key from OpenWeatherMap. Sign up for an API key at OpenWeatherMap. Once you have your API key, update the API_KEY variable in the src/App.js file with your key:
+
+const API_KEY = 'your_api_key'; // Replace this with your OpenWeatherMap API key
+
+## Run the project
+To start the project locally, run:
+
+npm start
+
+This will start the development server, and the application will be available at http://localhost:3000.
+
+### Assumptions Made
+The application assumes that the OpenWeatherMap API returns data for cities that exist and can display a proper error message if a city cannot be found.
+Only one forecast entry is shown per day, which is the forecast at 12:00 PM (based on OpenWeatherMap's forecast data structure).
+Unit switching between Celsius and Fahrenheit will apply to both current weather and the 5-day forecast.
+The default city when the app loads is 'New York.'
+
+### How to Use the Application
+
+## Search for a City
+Enter a city name in the search input box at the top of the page and press the "Search" button. The current weather and 5-day forecast for that city will be displayed.
+
+## View Current Weather
+The current weather card will show the city's name, temperature, and weather condition with an icon.
+
+## Toggle Temperature Units
+Use the "Switch to Fahrenheit/Celsius" button to switch between metric (Celsius) and imperial (Fahrenheit) units for both current weather and the 5-day forecast.
+
+## View 5-Day Forecast
+Below the current weather, a 5-day forecast is shown with high and low temperatures and weather icons for each day.
+
+### Technologies Used
+React.js: Frontend library for building user interfaces.
+Axios: For making HTTP requests to the OpenWeatherMap API.
+OpenWeatherMap API: To fetch current weather and 5-day forecast data.
+CSS: For styling and responsive design.
+
+### Error Handling
+The application has error handling mechanisms in place for the following scenarios:
+If the city name entered is invalid or cannot be found, a descriptive error message will be shown.
+If there are network issues, the app will notify the user with an appropriate error message.
+Both errors for the current weather and 5-day forecast are handled separately to ensure users receive clear feedback.
+
+### Future Enhancements
+Add a loading spinner while waiting for data from the API.
+Implement better error handling (e.g., handling rate-limiting from the OpenWeatherMap API).
+Include more details in the forecast, such as wind speed and humidity.
